@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        :root{
+            --bg:#21252b;
+            --btn_bg:#333942;
+            --btn_hover:#383e47;
+            --text_color:#d7dae0;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family:  monospace;
+            font-weight: bold;
+        }
+        
+        body{
+            background-color: var(--bg);
+            color: var(--text_color);
+
+        }
+        .container_counter{
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            max-width: 1200px;
+            margin: auto;
+        }
+        .btn_increment,.btn_decrement{
+            height: 43px;
+            border-radius: 80px;
+            cursor: pointer;
+            border: none;
+            color: var(--text_color);
+            background-color: var(--btn_bg);
+            flex-basis: 20%;
+            min-width: 130px;
+            transition: background 400ms ease;
+            transition: transform 100ms ease;
+            font-size: 18px;
+            font-weight: 300;
+            padding: 8px 12px
+        }
+        .btn_reset{
+            border-radius: 100%;
+            padding: 10px 12px;
+            width: 50px;
+            height: 50px;
+            border: none;
+            font-size: 18px;
+            color: var(--text_color);
+            background-color: var(--btn_bg);
+            cursor: pointer;
+        }
+        .container_btn{
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            align-items: center;
+            padding: 20px 10px;
+            flex-wrap: wrap;
+        }
+        .container_btn-reset{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .count{
+            padding: 20px 10px;
+            text-align: center;
+            font-size: 25rem;
+            min-height: 420px;
+        }
+
+        .btn_increment:hover,.btn_decrement:hover,.btn_reset:hover{
+            background-color: var(--btn_hover);
+        }
+        .btn_increment:active,.btn_decrement:active,.btn_reset:active{
+            transform: scale(.985);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="container_counter">
+        <span class="count" id="count">
+            
+        </span>
+        <div class="container_btn">
+            <button type="button" class="btn_increment" id="increment" >Increment</button>
+            <button type="button" class="btn_decrement" id="decrement">Decrement</button>
+            <span class="container_btn-reset">
+                <button type="button" class="btn_reset" id="reset" title="Reset">&#10227;</button>
+            </span>
+        </div>
+    </div>
+    <script src="./SinglentonCounter.js"></script>
+ 
+</body>
+</html>
