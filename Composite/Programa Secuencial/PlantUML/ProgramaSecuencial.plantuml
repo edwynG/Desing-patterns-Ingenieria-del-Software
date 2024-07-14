@@ -1,0 +1,23 @@
+@startuml "Programa secuencial"
+abstract Program{
+    +instruction:string
+    +execute():void
+}
+
+class Simple{
+    +execute():void
+}
+
+class Compound{
+    +instructions[]:Progrma
+    +add( arg :Program):void
+    +remove( arg :Program):void
+    +execute():void
+}
+
+Program <|--d Simple
+Program <|--r Compound
+Compound o-- Program
+
+
+@enduml

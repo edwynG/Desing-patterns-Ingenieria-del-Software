@@ -1,0 +1,54 @@
+@startuml Toyota
+abstract CreadorToyota{
+    +createVehicle(): Vehicle
+    +production()
+}
+
+abstract Vehicle{
+    +model:string
+    +capacity:int
+    +acelerate():void
+}
+
+class Corolla{
+    +model:string
+    +capacity:int
+     +acelerate():void
+}
+
+class Fortuner{
+    +model:string
+    +capacity:int
+     +acelerate():void
+}
+
+class Celica{
+    +model:string
+    +capacity:int
+    +acelerate():void
+}
+
+class ConcretSedan{
+     +createVehicle(): Corola
+
+}
+class ConcretVan{
+     +createVehicle(): Fortune
+     
+}
+
+class ConcretSports{
+     +createVehicle(): Celia
+     
+}
+
+CreadorToyota <|--l ConcretSedan 
+CreadorToyota <|--d ConcretVan
+CreadorToyota <|--u ConcretSports
+
+Vehicle <|-- Corolla
+Vehicle <|--r Fortuner
+Vehicle <|--u Celica
+
+CreadorToyota "0..*" -r--  Vehicle : <<create>>
+@enduml
